@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mine Yavuz Safak - Senior Product Manager</title>
+    <title>Mine Yavuz Safak - Senior Product Manager | SEO & AI/LLM Expert | Cork, Ireland</title>
+    <meta name="description" content="Mine Yavuz Safak - Senior Product Manager with 7+ years at Trendyol (Alibaba Group). Expert in SEO, growth, and AI/LLM automation. Based in Cork, Ireland. Available for product management opportunities.">
+    <meta name="keywords" content="Product Manager, SEO Expert, AI Automation, LLM, Growth Hacking, E-commerce, Trendyol, Cork Ireland, Mine Yavuz Safak">
+    <meta name="author" content="Mine Yavuz Safak">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -27,7 +29,7 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Header - Responsive Shimmer Text */
         header {
             background: rgba(15, 15, 35, 0.95);
             backdrop-filter: blur(20px);
@@ -37,28 +39,61 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(139, 92, 246, 0.1);
             transition: all 0.3s ease;
+            padding: 1rem 0;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 0;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            background: linear-gradient(135deg, #ffffff, #e4e6ea, #c4b5fd, #a855f7);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+            position: relative;
+            display: none; /* Hidden on desktop */
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            animation: shine 2.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 3rem;
+            background: rgba(15, 15, 35, 0.8);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            margin: 0 auto;
         }
 
         .nav-links a {
@@ -89,9 +124,10 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section - Make it taller to show full name */
         .hero {
-            min-height: 100vh;
+            height: 70vh;
+            min-height: 500px;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 50%, #312e81 100%);
@@ -119,52 +155,73 @@
             position: relative;
             z-index: 2;
             text-align: left;
-            max-width: 800px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            color: #a855f7;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
+            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff, #e4e6ea, #a855f7);
+            margin-bottom: 0.8rem;
+            background: linear-gradient(135deg, #ffffff, #e4e6ea, #c4b5fd, #a855f7);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1.1;
-            animation: fadeInUp 1s ease 0.4s both;
+            animation: fadeInUp 1s ease 0.2s both, shimmer 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            animation: shine 2.5s infinite;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1rem;
             color: #9ca3af;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             font-weight: 400;
-            animation: fadeInUp 1s ease 0.6s both;
+            animation: fadeInUp 1s ease 0.4s both;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        .team-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .team-tag {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(139, 92, 246, 0.3);
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            animation: fadeInUp 1s ease 0.8s both;
+            animation: fadeInUp 1s ease 0.6s both;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #8b5cf6, #a855f7);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             border: none;
             border-radius: 12px;
             font-weight: 600;
@@ -172,6 +229,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
             display: inline-block;
+            font-size: 0.95rem;
         }
 
         .btn-primary:hover {
@@ -182,13 +240,14 @@
         .btn-secondary {
             background: transparent;
             color: #e4e6ea;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             border: 2px solid rgba(139, 92, 246, 0.3);
             border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.95rem;
         }
 
         .btn-secondary:hover {
@@ -204,17 +263,17 @@
         }
 
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 1rem;
@@ -227,89 +286,176 @@
             margin: 0 auto;
         }
 
-        /* About Section */
-        .about-content {
+        /* Featured Projects - Alper Style */
+        .projects-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        .profile-card {
-            background: rgba(139, 92, 246, 0.05);
+        .project-card {
+            background: rgba(15, 15, 35, 0.8);
             border: 1px solid rgba(139, 92, 246, 0.1);
             border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
             backdrop-filter: blur(20px);
+            position: relative;
+            height: 380px;
+            cursor: pointer;
         }
 
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            border: 4px solid rgba(139, 92, 246, 0.3);
-            display: block;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.3);
         }
 
-        .profile-card h3 {
+        .project-image {
+            width: 100%;
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Project-specific backgrounds with actual images */
+        .yearbook-bg {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.9), rgba(247, 147, 30, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23ff6b35" width="400" height="300"/><circle fill="%23f7931e" cx="100" cy="80" r="30"/><rect fill="%23ffaa44" x="200" y="50" width="120" height="80" rx="10"/><text x="200" y="200" font-family="Arial" font-size="24" fill="white">2024</text><text x="200" y="230" font-family="Arial" font-size="16" fill="white">Yearbook</text></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ai-linking-bg {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23667eea" width="400" height="300"/><g stroke="white" stroke-width="2" fill="none"><path d="M50,150 Q100,100 150,150 T250,150 T350,150"/><circle cx="100" cy="150" r="8" fill="white"/><circle cx="200" cy="150" r="8" fill="white"/><circle cx="300" cy="150" r="8" fill="white"/></g><text x="200" y="50" font-family="Arial" font-size="18" fill="white" text-anchor="middle">AI Linking</text></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-automation-bg {
+            background: linear-gradient(135deg, rgba(168, 237, 234, 0.9), rgba(254, 214, 227, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23a8edea" width="400" height="300"/><rect x="50" y="50" width="300" height="80" rx="10" fill="white" opacity="0.8"/><rect x="50" y="150" width="300" height="80" rx="10" fill="white" opacity="0.6"/><text x="200" y="90" font-family="Arial" font-size="16" fill="%23333" text-anchor="middle">Banner 1</text><text x="200" y="190" font-family="Arial" font-size="16" fill="%23333" text-anchor="middle">Banner 2</text><circle cx="350" cy="250" r="20" fill="%23fed6e3"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            position: relative;
+        }
+
+        .project-label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-info h3 {
             color: #ffffff;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .profile-card p {
-            color: #9ca3af;
-            font-size: 0.95rem;
-        }
-
-        .about-text {
-            color: #e4e6ea;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .about-text h3 {
-            color: #ffffff;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(139, 92, 246, 0.05);
-            border: 1px solid rgba(139, 92, 246, 0.1);
-            border-radius: 15px;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #a855f7;
-            display: block;
-        }
-
-        .stat-label {
+        .project-info p {
             color: #9ca3af;
             font-size: 0.9rem;
-            margin-top: 0.5rem;
+            line-height: 1.5;
         }
 
-        /* Skills Section */
+        /* Project Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #0f0f23, #1e1b4b);
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .close {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            color: #9ca3af;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #a855f7;
+        }
+
+        .modal h3 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            color: #e4e6ea;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-tech .tech-tag {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        /* Skills Section - Updated from first-portfolio style */
         .skills-section {
             background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(168, 85, 247, 0.05));
         }
@@ -371,102 +517,195 @@
             line-height: 1.6;
         }
 
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
+        /* Experience Modal Styles */
+        .experience-modal-content {
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .project-card {
-            background: rgba(15, 15, 35, 0.8);
-            border: 1px solid rgba(139, 92, 246, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(20px);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.2);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 240px;
-            background: linear-gradient(135deg, #312e81, #1e1b4b, #0f0f23);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .exp-company-header h4 {
             color: #a855f7;
-            font-size: 3rem;
-            position: relative;
-            overflow: hidden;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
         }
 
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1));
+        .company-description {
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            font-style: italic;
         }
 
-        .project-content {
-            padding: 2rem;
+        .detailed-roles {
+            space-y: 2rem;
         }
 
-        .project-content h3 {
-            color: #ffffff;
-            font-size: 1.4rem;
+        .detailed-role {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .detailed-role:last-child {
+            border-bottom: none;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
+        }
+
+        .role-header h5 {
+            color: #ffffff;
+            font-size: 1.3rem;
             font-weight: 600;
         }
 
-        .project-content p {
+        .role-period {
+            color: #c4b5fd;
+            font-weight: 500;
+        }
+
+        .role-achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .role-achievements li {
+            color: #e4e6ea;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .role-achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #a855f7;
+            font-size: 0.8rem;
+        }
+
+        .experience-overview {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .experience-card {
+            background: rgba(15, 15, 35, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .exp-company {
+            color: #a855f7;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-period {
             color: #9ca3af;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .exp-roles {
+            margin-bottom: 2rem;
+        }
+
+        .role-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .role-item:last-child {
+            border-bottom: none;
+        }
+
+        .role-title {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .role-date {
+            color: #c4b5fd;
+            font-size: 0.9rem;
+        }
+
+        .exp-summary {
+            color: #e4e6ea;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .view-experience-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .view-experience-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Thesis Section */
+        .thesis-section {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .thesis-section h4 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .thesis-section p {
+            color: #e4e6ea;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: rgba(139, 92, 246, 0.2);
-            color: #a855f7;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: #a855f7;
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
+        .thesis-link {
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: color 0.3s ease;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .project-link:hover {
-            color: #8b5cf6;
+        .thesis-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
 
         /* Contact Section */
@@ -478,7 +717,7 @@
             text-align: center;
             background: rgba(15, 15, 35, 0.8);
             border: 1px solid rgba(139, 92, 246, 0.2);
-            padding: 4rem;
+            padding: 3rem;
             border-radius: 25px;
             backdrop-filter: blur(20px);
         }
@@ -502,7 +741,7 @@
             display: flex;
             justify-content: center;
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .contact-item {
@@ -598,8 +837,30 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* Show logo on mobile with shimmer effect */
+            .logo {
+                display: block !important;
+                font-size: 1.3rem;
+            }
+
+            nav {
+                justify-content: space-between;
+            }
+
             .nav-links {
-                display: none;
+                gap: 1.5rem;
+                padding: 0.8rem 1.5rem;
+                background: none;
+                border: none;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 60vh;
+                min-height: 400px;
             }
 
             .hero h1 {
@@ -607,7 +868,7 @@
             }
 
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
             }
 
             .hero-buttons {
@@ -615,13 +876,13 @@
                 align-items: flex-start;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .team-tags {
+                gap: 0.3rem;
             }
 
-            .stats {
-                grid-template-columns: 1fr;
+            .team-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
             }
 
             .contact-info {
@@ -629,11 +890,11 @@
                 gap: 1rem;
             }
 
-            .skills-grid {
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .projects-grid {
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -641,8 +902,36 @@
                 padding: 60px 0;
             }
 
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
             .contact-content {
                 padding: 2rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 2rem;
+            }
+
+            .experience-modal-content {
+                width: 95%;
+                margin: 5% auto;
+                padding: 1.5rem;
+                max-height: 85vh;
+            }
+
+            .role-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -653,9 +942,9 @@
             <div class="logo">Mine Yavuz Safak</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -664,9 +953,20 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">👋 Available for new opportunities</div>
                 <h1>Mine Yavuz Safak</h1>
-                <p class="hero-subtitle">Senior Product Manager specializing in SEO, Growth, and AI/LLM automation projects</p>
+                <p class="hero-subtitle">I'm a Product Manager with 7+ years of experience in e-commerce, focused on SEO, growth, and engagement products. I work closely with engineering, UX, data teams, NLP, recommendation, data engineering, data science, and marketing teams to build scalable, data-driven solutions that improve discoverability and user interaction. Passionate about creating meaningful product experiences, I thrive at the intersection of technology, strategy, and impact.</p>
+                
+                <div class="team-tags">
+                    <span class="team-tag">Engineering</span>
+                    <span class="team-tag">UX/UI</span>
+                    <span class="team-tag">Data Teams</span>
+                    <span class="team-tag">NLP</span>
+                    <span class="team-tag">Recommendation</span>
+                    <span class="team-tag">Data Engineering</span>
+                    <span class="team-tag">Data Science</span>
+                    <span class="team-tag">Marketing</span>
+                </div>
+                
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary">Get In Touch</a>
                     <a href="#projects" class="btn-secondary">View My Work</a>
@@ -676,38 +976,50 @@
     </section>
 
     <main>
-        <section class="section" id="about">
+        <section class="section" id="projects">
             <div class="container">
                 <div class="section-title">
-                    <h2>About Me</h2>
-                    <p>Passionate about creating innovative solutions and building meaningful digital experiences</p>
+                    <h2>Featured Projects</h2>
+                    <p>A showcase of my recent work and technical capabilities</p>
                 </div>
-                <div class="about-content">
-                    <div class="profile-card">
-                        <img src="https://via.placeholder.com/200x200/8b5cf6/ffffff?text=Mine" alt="Mine Yavuz Safak" class="profile-image">
-                        <h3>Mine Yavuz Safak</h3>
-                        <p>Senior Product Manager</p>
+                <div class="projects-grid">
+                    <div class="project-card" onclick="openModal('yearbook')">
+                        <div class="project-image yearbook-bg">
+                            <div class="project-label">Product Management</div>
+                            <div class="project-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Trendyol Yearbook</h3>
+                            <p>A personalized year-in-review experience for 45M+ users with overwhelmingly positive social engagement</p>
+                        </div>
                     </div>
-                    <div class="about-text">
-                        <h3>Hello! I'm Mine, a Product Manager based in Cork, Ireland.</h3>
-                        <p>I recently concluded nearly 7 years as a Senior Product Manager at Trendyol, Turkey's largest e-commerce company and partner of Alibaba Group. With a $16 billion valuation, Trendyol operates in 41 countries and 15 different languages.</p>
-                        <p>I specialize in SEO, growth, and AI/LLM automation projects. At Trendyol, I managed the product development processes of three technical teams within the technology department, working alongside more than 2,000 developers and 200 product managers.</p>
-                        <p>My expertise includes product positioning, stakeholder management, agile methodology, A/B testing, and strategic planning. I'm particularly passionate about leveraging AI and machine learning to optimize user experiences and drive business growth.</p>
-                        <p>I hold a Master's degree in Engineering Management with a thesis on e-commerce product recommendation systems, exploring the effects of Generative AI and NLP methods on customer purchasing behavior.</p>
+                    
+                    <div class="project-card" onclick="openModal('ai-linking')">
+                        <div class="project-image ai-linking-bg">
+                            <div class="project-label">AI Automation</div>
+                            <div class="project-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Dynamic Internal Linking</h3>
+                            <p>AI-powered multilingual internal linking system using LLM-based automation for SEO optimization</p>
+                        </div>
                     </div>
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">30+</span>
-                        <span class="stat-label">Projects Annually</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">7</span>
-                        <span class="stat-label">Years at Trendyol</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">41</span>
-                        <span class="stat-label">Countries Served</span>
+                    
+                    <div class="project-card" onclick="openModal('banner-automation')">
+                        <div class="project-image banner-automation-bg">
+                            <div class="project-label">Automation Platform</div>
+                            <div class="project-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Banner Automation Platform</h3>
+                            <p>Automated banner generation across 41 countries, reducing setup time from 7 days to 15 minutes</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -754,97 +1066,70 @@
             </div>
         </section>
 
-        <section class="section" id="projects">
+        <section class="section" id="experience">
             <div class="container">
                 <div class="section-title">
-                    <h2>Featured Projects</h2>
-                    <p>A showcase of my recent work and technical capabilities</p>
+                    <h2>Experience Highlights</h2>
+                    <p>Key achievements and roles throughout my career journey</p>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>🧩 Trendyol Yearbook Project</h3>
-                            <p>A personalized year-in-review experience for Trendyol users, highlighting annual shopping behavior with features like first purchase, favorite colors, and category-based personality insights. Delivered for 45M+ users with overwhelmingly positive social engagement.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Product Management</span>
-                                <span class="tech-tag">UX/UI Collaboration</span>
-                                <span class="tech-tag">Data Analytics</span>
-                                <span class="tech-tag">Personalization</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Case Study
-                                </a>
+                
+                <!-- Simplified Experience Overview -->
+                <div class="experience-overview">
+                    <div class="experience-card">
+                        <div class="exp-company">Trendyol | Alibaba Group</div>
+                        <div class="exp-period">2018 - 2024</div>
+                        <div class="exp-roles">
+                            <div class="role-item">
+                                <span class="role-title">Senior Product Manager</span>
+                                <span class="role-date">Jun 2024 - Jul 2025</span>
                             </div>
                         </div>
+                        <div class="exp-summary">
+                            Led SEO and Digital Engagement product roadmaps, executing 30+ projects annually. Elevated Trendyol from 3rd position to #1 market leader in SEO among Turkish e-commerce platforms.
+                        </div>
+                        <button class="view-experience-btn" onclick="openExperienceModal()">
+                            <i class="fas fa-arrow-right"></i>
+                            View Full Experience
+                        </button>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-link"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>🧠 Dynamic Internal Linking (AI Automation)</h3>
-                            <p>Built an AI-powered multilingual internal linking system using LLM-based automation. Dynamically suggests relevant products (e.g., AirPods for iPhone pages) optimizing crawl efficiency and semantic relevance across thousands of URLs.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">AI/LLM</span>
-                                <span class="tech-tag">NLP</span>
-                                <span class="tech-tag">SEO Automation</span>
-                                <span class="tech-tag">Multilingual</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Case Study
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-magic"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>⚙️ Banner Automation Platform</h3>
-                            <p>Developed a platform automating banner generation for engagement campaigns across 41 countries and 15 languages. Reduced campaign setup time from 7 days to 15 minutes using single-language input for real-time multi-locale deployment.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Automation</span>
-                                <span class="tech-tag">Internationalization</span>
-                                <span class="tech-tag">Campaign Management</span>
-                                <span class="tech-tag">Real-time Processing</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Case Study
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+
+                <!-- Thesis Section -->
+                <div class="thesis-section">
+                    <h4>Master's Thesis</h4>
+                    <p>
+                        <strong>E-commerce Product Recommendation Systems:</strong> Exploring the Impact of Generative AI and NLP Methods on Customer Purchasing Behavior
+                    </p>
+                    <a href="https://polen.itu.edu.tr/items/d0edf82d-7aa1-4374-a59e-1af284bcd097" target="_blank" class="thesis-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Thesis
+                    </a>
                 </div>
             </div>
         </section>
 
         <section class="section contact-section" id="contact">
             <div class="container">
-                <div class="section-title">
-                    <h2>Let's Work Together</h2>
-                    <p>Ready to bring your ideas to life? Let's discuss your next project</p>
-                </div>
                 <div class="contact-content">
                     <h3>Get In Touch</h3>
-                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and innovation.</p>
+                    <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about product management and technology.</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <a href="mailto:mineyavuz96@gmail.com">mineyavuz96@gmail.com</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-linkedin-in contact-icon"></i>
-                            <a href="https://linkedin.com/in/mine-yavuz-safak" target="_blank">LinkedIn Profile</a>
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <a href="https://www.linkedin.com/in/mine-yavuz/" target="_blank">LinkedIn Profile</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
                             <span>Cork, Ireland</span>
                         </div>
                     </div>
@@ -857,7 +1142,7 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/mine-yavuz-safak" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/in/mine-yavuz/" class="social-link" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="mailto:mineyavuz96@gmail.com" class="social-link">
@@ -871,7 +1156,205 @@
         </div>
     </footer>
 
+    <!-- Experience Detail Modal -->
+    <div id="experience-modal" class="modal">
+        <div class="modal-content experience-modal-content">
+            <span class="close" onclick="closeExperienceModal()">&times;</span>
+            <h3>Professional Experience</h3>
+            <div class="detailed-experience">
+                <div class="exp-company-header">
+                    <h4>Trendyol | Alibaba Group</h4>
+                    <p class="company-description">Turkey's leading e-commerce company and unicorn with $16 billion valuation, operating in 41 countries and 15 languages</p>
+                </div>
+                
+                <div class="detailed-roles">
+                    <div class="detailed-role">
+                        <div class="role-header">
+                            <h5>Senior Product Manager</h5>
+                            <span class="role-period">Jun 2024 - Jul 2025</span>
+                        </div>
+                        <ul class="role-achievements">
+                            <li>Implemented Dynamic Rendering as a Service and Server-Side Rendering infrastructures, improving page load speed and CPU usage by up to 90%</li>
+                            <li>Led automation of SEO workflows, optimizing content indexing and crawl budget allocation, resulting in 40% increase in organic traffic</li>
+                            <li>Engaged with UX, Storefront, Data Science, NLP, Recommendation, and Data Engineering teams to establish agile execution frameworks</li>
+                            <li>Empowered junior colleagues through structured feedback loops, resulting in increased participation rates during strategic meetings from 50% to over 90%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detailed-role">
+                        <div class="role-header">
+                            <h5>Product Manager</h5>
+                            <span class="role-period">Jan 2023 - Jun 2024</span>
+                        </div>
+                        <ul class="role-achievements">
+                            <li>Managed SEO and Digital Engagement product roadmaps, executing 30+ projects annually</li>
+                            <li>Drove conversion rate optimization (CRO) initiatives, enhancing customer engagement by 20%</li>
+                            <li>Implemented promotion and communication platforms, including push notifications and gamification features</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detailed-role">
+                        <div class="role-header">
+                            <h5>Associate Product Manager</h5>
+                            <span class="role-period">Apr 2022 - Jan 2023</span>
+                        </div>
+                        <ul class="role-achievements">
+                            <li>Elevated Trendyol from 3rd position to #1 market leader in SEO among Turkish e-commerce platforms within a year</li>
+                            <li>Focused on technical SEO improvements and automation projects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detailed-role">
+                        <div class="role-header">
+                            <h5>Senior SEO Specialist</h5>
+                            <span class="role-period">Dec 2021 - Apr 2022</span>
+                        </div>
+                        <ul class="role-achievements">
+                            <li>Led technical SEO initiatives and cross-functional collaboration</li>
+                            <li>Developed SEO automation tools and processes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detailed-role">
+                        <div class="role-header">
+                            <h5>SEO Specialist</h5>
+                            <span class="role-period">May 2019 - Dec 2021</span>
+                        </div>
+                        <ul class="role-achievements">
+                            <li>Implemented comprehensive SEO strategies for e-commerce platform</li>
+                            <li>Managed technical SEO projects and site optimization initiatives</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detailed-role">
+                        <div class="role-header">
+                            <h5>SEO Internship</h5>
+                            <span class="role-period">Oct 2018 - May 2019</span>
+                        </div>
+                        <ul class="role-achievements">
+                            <li>Started career in SEO with focus on learning e-commerce optimization</li>
+                            <li>Supported technical SEO initiatives and data analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals -->
+    <div id="yearbook-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('yearbook')">&times;</span>
+            <h3>🧩 Trendyol Yearbook Project</h3>
+            <p>
+                A personalized year-in-review experience for Trendyol users, highlighting their annual shopping behavior. This innovative project included features like first purchase memories, favorite colors analysis, category-based personality insights, and shopping pattern visualizations.
+            </p>
+            <p>
+                The project was delivered to over 45 million users and received overwhelmingly positive engagement on social platforms. It significantly boosted user loyalty through interactive storytelling and created a viral marketing effect that increased brand awareness.
+            </p>
+            <p>
+                <strong>Key Impact:</strong> The Yearbook project became one of the most shared features on Trendyol's platform, generating thousands of social media posts and increasing user engagement by 35% during the campaign period.
+            </p>
+            <div class="modal-tech">
+                <span class="tech-tag">Product Management</span>
+                <span class="tech-tag">UX/UI Collaboration</span>
+                <span class="tech-tag">Data Analytics</span>
+                <span class="tech-tag">Personalization</span>
+                <span class="tech-tag">Social Media Integration</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-linking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ai-linking')">&times;</span>
+            <h3>🧠 Dynamic Internal Linking (AI Automation)</h3>
+            <p>
+                Built an AI-powered multilingual internal linking system that revolutionized how users discover related products on Trendyol. The system uses advanced LLM-based automation to dynamically suggest relevant product pages based on user behavior and semantic relevance.
+            </p>
+            <p>
+                For example, when a user lands on an iPhone product page, the system automatically surfaces contextually relevant links to compatible accessories like AirPods, phone cases, or charging cables. This intelligent linking improved both user experience and SEO performance.
+            </p>
+            <p>
+                <strong>Technical Achievement:</strong> The system processes thousands of URLs across 15 languages, optimizing crawl efficiency and improving semantic relevance. It resulted in a 40% increase in internal page views and improved overall site engagement metrics.
+            </p>
+            <div class="modal-tech">
+                <span class="tech-tag">AI/LLM</span>
+                <span class="tech-tag">Natural Language Processing</span>
+                <span class="tech-tag">SEO Automation</span>
+                <span class="tech-tag">Multilingual Processing</span>
+                <span class="tech-tag">Machine Learning</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="banner-automation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('banner-automation')">&times;</span>
+            <h3>⚙️ Banner Automation Platform</h3>
+            <p>
+                Developed a comprehensive platform that completely transformed how marketing teams create and deploy promotional banners across Trendyol's global operations. The system automates banner generation for engagement campaigns across 41 countries and 15 different languages.
+            </p>
+            <p>
+                The platform enabled marketing teams to launch and update promotional banners for first-time purchases, second orders, and loyalty campaigns in real-time across web, mobile app, and multiple locales using just a single language input.
+            </p>
+            <p>
+                <strong>Business Impact:</strong> This automation reduced campaign setup time from 7 days to just 15 minutes, enabling faster time-to-market for promotional campaigns and saving hundreds of hours of manual work monthly across international markets.
+            </p>
+            <div class="modal-tech">
+                <span class="tech-tag">Process Automation</span>
+                <span class="tech-tag">Internationalization</span>
+                <span class="tech-tag">Campaign Management</span>
+                <span class="tech-tag">Real-time Processing</span>
+                <span class="tech-tag">Multi-platform Deployment</span>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Experience modal functionality
+        function openExperienceModal() {
+            document.getElementById('experience-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeExperienceModal() {
+            document.getElementById('experience-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -896,7 +1379,7 @@
             }
         });
 
-        // Animate cards on scroll
+        // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -910,7 +1393,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+        document.querySelectorAll('.project-card, .experience-item').forEach(card => {
             observer.observe(card);
         });
     </script>
