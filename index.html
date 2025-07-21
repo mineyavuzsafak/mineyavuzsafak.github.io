@@ -8,10 +8,8 @@
     <meta name="keywords" content="Product Manager, Product Owner, Scrum Master, SEO Expert, AI Automation, LLM, Growth, E-commerce, Trendyol, Cork, Ireland, Mine Yavuz Safak">
     <meta name="author" content="Mine Yavuz Safak">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://mineyavuzsafak.github.io/"/>
     
-    <!-- Custom Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8Y2lyY2xlIGN4PSIxMyIgY3k9IjE0IiByPSI1IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43Ii8+CjxjaXJjbGUgY3g9IjE5IiBjeT0iMTQiIHI9IjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjciLz4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxOCIgcj0iNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOSIvPgo8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIyIiBmaWxsPSIjMWUyOTNiIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iMzIiIHkyPSIzMiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMWUyOTNiIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo">
     <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iNDAiIGZpbGw9InVybCgjZ3JhZGllbnQwKSIvPgo8cGF0aCBkPSJNNDAgNjBoMjBsMjAgNDBoMjBsMjAgNDBoMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjgiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEzMCIgcj0iOCIgZmlsbD0id2hpdGUiLz4KPGREZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iMTgwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM4YjVjZjYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTg1NWY3Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==">
     
@@ -294,13 +292,24 @@
             margin: 0 auto;
         }
 
-        /* Featured Projects - Alper Style */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+        /* Featured Projects - Alper Style Slider */
+        .projects-slider {
+            position: relative;
         }
 
+        .projects-wrapper {
+            display: flex;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.5rem;
+            padding-bottom: 1rem; /* Space for scrollbar if visible */
+        }
+        
         .project-card {
             background: rgba(15, 15, 35, 0.8);
             border: 1px solid rgba(139, 92, 246, 0.1);
@@ -311,6 +320,7 @@
             position: relative;
             height: 380px;
             cursor: pointer;
+            flex: 0 0 300px;
         }
 
         .project-card:hover {
@@ -349,6 +359,48 @@
         .banner-automation-bg {
             background: linear-gradient(135deg, rgba(168, 237, 234, 0.9), rgba(254, 214, 227, 0.9)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23a8edea" width="400" height="300"/><rect x="50" y="50" width="300" height="80" rx="10" fill="white" opacity="0.8"/><rect x="50" y="150" width="300" height="80" rx="10" fill="white" opacity="0.6"/><text x="200" y="90" font-family="Arial" font-size="16" fill="%23333" text-anchor="middle">Banner 1</text><text x="200" y="190" font-family="Arial" font-size="16" fill="%23333" text-anchor="middle">Banner 2</text><circle cx="350" cy="250" r="20" fill="%23fed6e3"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dynamic-rendering-bg {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%2322c55e" width="400" height="300"/><path d="M50 150 L100 100 L150 150 L200 100 L250 150 L300 100 L350 150" stroke="white" stroke-width="4" fill="none"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .seo-crawler-bg {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(79, 70, 229, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%236366f1" width="400" height="300"/><circle cx="200" cy="150" r="80" fill="none" stroke="white" stroke-width="4" stroke-dasharray="10 5"/><path d="M160 150 L200 190 L240 150" stroke="white" stroke-width="4" fill="none"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .seo-advisor-bg {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.9), rgba(217, 70, 239, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23f97316" width="400" height="300"/><path d="M100 100 L200 200 L300 100" stroke="white" stroke-width="4" fill="none"/><circle cx="200" cy="150" r="20" fill="white"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .landing-page-generator-bg {
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.9), rgba(202, 138, 4, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23eab308" width="400" height="300"/><rect x="50" y="50" width="300" height="200" fill="white" rx="10"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .seo-dashboard-bg {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.9), rgba(190, 24, 93, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23ec4899" width="400" height="300"/><rect x="50" y="50" width="100" height="80" fill="white" rx="5"/><rect x="180" y="50" width="100" height="80" fill="white" rx="5"/><rect x="50" y="150" width="230" height="100" fill="white" rx="5"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gamification-bg {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.9), rgba(219, 39, 119, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23f43f5e" width="400" height="300"/><path d="M100 100 H300 V200 H100 Z" fill="white"/><circle cx="200" cy="150" r="30" fill="%23f43f5e"/></svg>');
             background-size: cover;
             background-position: center;
         }
@@ -392,6 +444,39 @@
             color: #9ca3af;
             font-size: 0.9rem;
             line-height: 1.5;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .slider-nav button {
+            background: rgba(15, 15, 35, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            color: #e4e6ea;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-nav button:hover {
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        #prev-slide {
+            margin-left: -20px;
+        }
+
+        #next-slide {
+            margin-right: -20px;
         }
 
         /* Project Modal */
@@ -1037,44 +1122,131 @@
                     <h2>Featured Projects</h2>
                     <p>A showcase of my recent work and technical capabilities</p>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card" onclick="openModal('yearbook')">
-                        <div class="project-image yearbook-bg">
-                            <div class="project-label">Product Management</div>
-                            <div class="project-icon">
-                                <i class="fas fa-calendar-alt"></i>
+                <div class="projects-slider">
+                    <div class="projects-wrapper">
+                        <div class="projects-grid">
+                            <div class="project-card" onclick="openModal('yearbook')">
+                                <div class="project-image yearbook-bg">
+                                    <div class="project-label">Product Management</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Trendyol Yearbook</h3>
+                                    <p>A personalized year-in-review experience for 45M+ users with overwhelmingly positive social engagement</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Trendyol Yearbook</h3>
-                            <p>A personalized year-in-review experience for 45M+ users with overwhelmingly positive social engagement</p>
+                            
+                            <div class="project-card" onclick="openModal('ai-linking')">
+                                <div class="project-image ai-linking-bg">
+                                    <div class="project-label">AI Automation</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-link"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Dynamic Internal Linking</h3>
+                                    <p>AI-powered multilingual internal linking system using LLM-based automation for SEO optimization</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card" onclick="openModal('banner-automation')">
+                                <div class="project-image banner-automation-bg">
+                                    <div class="project-label">Automation Platform</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Banner Automation Platform</h3>
+                                    <p>Automated banner generation across 41 countries, reducing setup time from 7 days to 15 minutes</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card" onclick="openModal('dynamic-rendering')">
+                                <div class="project-image dynamic-rendering-bg">
+                                    <div class="project-label">SEO Infrastructure</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Dynamic Rendering as a Service</h3>
+                                    <p>Scalable SSR solution to improve page load speeds and enhance SEO visibility.</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card" onclick="openModal('seo-crawler')">
+                                <div class="project-image seo-crawler-bg">
+                                    <div class="project-label">AI Integration</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-search-location"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>SEO Crawler Project</h3>
+                                    <p>Internal tool with AI assistant for on-site SEO auditing and content generation.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card" onclick="openModal('seo-advisor')">
+                                <div class="project-image seo-advisor-bg">
+                                    <div class="project-label">Data Analytics</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>SEO Advisor</h3>
+                                    <p>Smart system to prioritize pages for Googlebot, enhancing crawl budget efficiency.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card" onclick="openModal('landing-page-generator')">
+                                <div class="project-image landing-page-generator-bg">
+                                    <div class="project-label">Programmatic SEO</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Automated Landing Page Generator</h3>
+                                    <p>Generated over 40,000 new indexable pages to improve visibility on international domains.</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card" onclick="openModal('seo-dashboard')">
+                                <div class="project-image seo-dashboard-bg">
+                                    <div class="project-label">Internal Tools</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>SEO Dashboard</h3>
+                                    <p>End-to-end SEO management platform to empower non-technical teams.</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card" onclick="openModal('gamification')">
+                                <div class="project-image gamification-bg">
+                                    <div class="project-label">Gamification</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-gamepad"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Gamification Project – "Collect in Cart"</h3>
+                                    <p>Increased seller coupon usage and user interaction with a gamified checkout experience.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    
-                    <div class="project-card" onclick="openModal('ai-linking')">
-                        <div class="project-image ai-linking-bg">
-                            <div class="project-label">AI Automation</div>
-                            <div class="project-icon">
-                                <i class="fas fa-link"></i>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Dynamic Internal Linking</h3>
-                            <p>AI-powered multilingual internal linking system using LLM-based automation for SEO optimization</p>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" onclick="openModal('banner-automation')">
-                        <div class="project-image banner-automation-bg">
-                            <div class="project-label">Automation Platform</div>
-                            <div class="project-icon">
-                                <i class="fas fa-magic"></i>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Banner Automation Platform</h3>
-                            <p>Automated banner generation across 41 countries, reducing setup time from 7 days to 15 minutes</p>
-                        </div>
+                    <div class="slider-nav">
+                        <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -1128,7 +1300,6 @@
                     <p>Key achievements and roles throughout my career journey</p>
                 </div>
                 
-                <!-- Simplified Experience Overview -->
                 <div class="experience-overview">
                     <div class="experience-card">
                         <div class="exp-company">Trendyol | Alibaba Group</div>
@@ -1149,7 +1320,6 @@
                     </div>
                 </div>
 
-                <!-- Thesis Section -->
                 <div class="thesis-section">
                     <h4>Master's Thesis</h4>
                     <p>
@@ -1211,7 +1381,6 @@
         </div>
     </footer>
 
-    <!-- Experience Detail Modal -->
     <div id="experience-modal" class="modal">
         <div class="modal-content experience-modal-content">
             <span class="close" onclick="closeExperienceModal()">&times;</span>
@@ -1296,7 +1465,6 @@
         </div>
     </div>
 
-    <!-- Project Modals -->
     <div id="yearbook-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('yearbook')">&times;</span>
@@ -1365,6 +1533,108 @@
             </div>
         </div>
     </div>
+    
+    <div id="dynamic-rendering-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('dynamic-rendering')">&times;</span>
+            <h3>🧩 Dynamic Rendering as a Service & SSR Rendering</h3>
+            <p>A scalable rendering solution that transformed how Trendyol handled content visibility for Googlebot. By converting JavaScript-heavy pages into static HTML versions through server-side rendering, this project significantly improved page load speeds and enhanced critical SEO fragment visibility.</p>
+            <p>This infrastructure was developed as a service, enabling over 100 internal services to be easily managed. It reduced international launch timelines from 6 months to just 2 days and improved Googlebot’s page loading speed by 80%.</p>
+            <p><strong>Key Impact:</strong> Delivered an SEO-compliant rendering platform that accelerated country launches and improved search engine indexing quality at scale.</p>
+            <div class="modal-tech">
+                <span class="tech-tag">Product Management</span>
+                <span class="tech-tag">SEO Infrastructure</span>
+                <span class="tech-tag">SSR</span>
+                <span class="tech-tag">Scalability</span>
+                <span class="tech-tag">Performance Optimization</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="seo-crawler-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('seo-crawler')">&times;</span>
+            <h3>🧩 SEO Crawler Project</h3>
+            <p>An internal tool designed to scan websites, assess vital meta tags, and identify SEO fragments. Integrated with Google Search Console APIs, the crawler delivers advanced diagnostics including page scoring, Web Vitals metrics, and content optimization opportunities.</p>
+            <p>The crawler includes an AI assistant that generates SEO content (title, description) using LLMs, recommends page improvements, sends auto-alerts, and can fix minor issues when granted access to the site’s repository.</p>
+            <p><strong>Key Impact:</strong> Streamlined on-site SEO auditing and reduced manual intervention by offering AI-powered diagnostics and content creation.</p>
+            <div class="modal-tech">
+                <span class="tech-tag">AI Integration</span>
+                <span class="tech-tag">SEO Tooling</span>
+                <span class="tech-tag">Web Performance</span>
+                <span class="tech-tag">Automation</span>
+                <span class="tech-tag">LLM</span>
+                <span class="tech-tag">Content Generation</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="seo-advisor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('seo-advisor')">&times;</span>
+            <h3>🧩 SEO Advisor</h3>
+            <p>A smart system that merges Google Search Console, Google Ads, and clickstream data to evaluate which pages are prioritized by Googlebot. It helps teams make informed decisions about crawling budget and page importance.</p>
+            <p>The result is more efficient crawling, better indexation of valuable pages, and reduced bot waste on low-value content.</p>
+            <p><strong>Key Impact:</strong> Enhanced crawl budget efficiency and improved visibility of high-priority pages through data-informed automation.</p>
+            <div class="modal-tech">
+                <span class="tech-tag">Data Analytics</span>
+                <span class="tech-tag">Search Behavior</span>
+                <span class="tech-tag">Crawl Optimization</span>
+                <span class="tech-tag">SEO Strategy</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="landing-page-generator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('landing-page-generator')">&times;</span>
+            <h3>🧩 Automated Landing Page Generator</h3>
+            <p>An automation tool that creates on-demand, SEO-friendly landing pages with beautified URLs when users search for queries with no existing content match.</p>
+            <p>This tool generated over 40,000 new indexable pages, dramatically improving visibility on international domains and becoming one of the top-performing page types in terms of impressions and clicks.</p>
+            <p><strong>Key Impact:</strong> Boosted organic reach across global domains by dynamically filling keyword gaps with relevant, crawlable content.</p>
+            <div class="modal-tech">
+                <span class="tech-tag">Automation</span>
+                <span class="tech-tag">Programmatic SEO</span>
+                <span class="tech-tag">Long-Tail Keywords</span>
+                <span class="tech-tag">International Growth</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="seo-dashboard-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('seo-dashboard')">&times;</span>
+            <h3>🧩 SEO Dashboard</h3>
+            <p>An end-to-end SEO management platform tailored to the needs of growth and SEO teams. It supports daily GSC data review, manual meta tag management (title, description, canonical, noindex), sitemap generation, robots.txt updates, and custom landing page creation.</p>
+            <p>It also allows markdown editing for FAQ sections and provides control over visibility settings for search engines.</p>
+            <p><strong>Key Impact:</strong> Empowered non-technical teams with full SEO control and reduced time-to-implementation for technical updates.</p>
+            <div class="modal-tech">
+                <span class="tech-tag">SEO Management</span>
+                <span class="tech-tag">Internal Tools</span>
+                <span class="tech-tag">Sitemaps</span>
+                <span class="tech-tag">Content Control</span>
+                <span class="tech-tag">Growth Enablement</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="gamification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('gamification')">&times;</span>
+            <h3>🧩 Gamification Project – "Collect in Cart"</h3>
+            <p>A lighthearted game integrated into the checkout experience that lets users collect coupon codes from sellers based on their most-shopped product categories.</p>
+            <p>When a relevant coupon is found, it's surfaced to the user at checkout, driving conversions and increasing seller visibility. The project aimed to elevate engagement through playful mechanics and personalized offers.</p>
+            <p><strong>Key Impact:</strong> Increased seller coupon usage and user interaction by introducing gamification to the checkout flow.</p>
+            <div class="modal-tech">
+                <span class="tech-tag">Gamification</span>
+                <span class="tech-tag">User Engagement</span>
+                <span class="tech-tag">Checkout Experience</span>
+                <span class="tech-tag">Personalization</span>
+                <span class="tech-tag">Seller Enablement</span>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         // Experience modal functionality
@@ -1408,6 +1678,19 @@
                     }
                 });
             }
+        });
+        
+        // Project Slider
+        const projectsWrapper = document.querySelector('.projects-wrapper');
+        const prevButton = document.getElementById('prev-slide');
+        const nextButton = document.getElementById('next-slide');
+
+        nextButton.addEventListener('click', () => {
+            projectsWrapper.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+
+        prevButton.addEventListener('click', () => {
+            projectsWrapper.scrollBy({ left: -320, behavior: 'smooth' });
         });
 
         // Smooth scrolling for navigation links
