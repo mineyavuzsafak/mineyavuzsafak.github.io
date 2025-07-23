@@ -342,6 +342,13 @@
         }
 
         /* Project-specific backgrounds with actual images */
+        .llm-content-generator-bg {
+             background: linear-gradient(135deg, rgba(20, 184, 166, 0.9), rgba(6, 95, 70, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%2314b8a6" width="400" height="300"/><path d="M50 100 H350 M50 150 H350 M50 200 H250" stroke="white" stroke-width="8" stroke-linecap="round"/><path d="M300 180 L320 200 L300 220" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
         .yearbook-bg {
             background: linear-gradient(135deg, rgba(255, 107, 53, 0.9), rgba(247, 147, 30, 0.9)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23ff6b35" width="400" height="300"/><circle fill="%23f7931e" cx="100" cy="80" r="30"/><rect fill="%23ffaa44" x="200" y="50" width="120" height="80" rx="10"/><text x="200" y="200" font-family="Arial" font-size="24" fill="white">2024</text><text x="200" y="230" font-family="Arial" font-size="16" fill="white">Yearbook</text></svg>');
@@ -1125,16 +1132,16 @@
                 <div class="projects-slider">
                     <div class="projects-wrapper">
                         <div class="projects-grid">
-                            <div class="project-card" onclick="openModal('yearbook')">
-                                <div class="project-image yearbook-bg">
-                                    <div class="project-label">Product Management</div>
+                            <div class="project-card" onclick="openModal('llm-content-generator')">
+                                <div class="project-image llm-content-generator-bg">
+                                    <div class="project-label">Semantic AI</div>
                                     <div class="project-icon">
-                                        <i class="fas fa-calendar-alt"></i>
+                                        <i class="fas fa-pen-fancy"></i>
                                     </div>
                                 </div>
                                 <div class="project-info">
-                                    <h3>Trendyol Yearbook</h3>
-                                    <p>A personalized year-in-review experience for 45M+ users with overwhelmingly positive social engagement</p>
+                                    <h3>LLM-Based SEO Content Generator</h3>
+                                    <p>Automated content creation pipeline using Azure GPT and semantic models.</p>
                                 </div>
                             </div>
                             
@@ -1161,6 +1168,19 @@
                                 <div class="project-info">
                                     <h3>Banner Automation Platform</h3>
                                     <p>Automated banner generation across 41 countries, reducing setup time from 7 days to 15 minutes</p>
+                                </div>
+                            </div>
+
+                            <div class="project-card" onclick="openModal('yearbook')">
+                                <div class="project-image yearbook-bg">
+                                    <div class="project-label">Product Management</div>
+                                    <div class="project-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Trendyol Yearbook</h3>
+                                    <p>A personalized year-in-review experience for 45M+ users with overwhelmingly positive social engagement</p>
                                 </div>
                             </div>
 
@@ -1465,6 +1485,30 @@
         </div>
     </div>
 
+    <div id="llm-content-generator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('llm-content-generator')">&times;</span>
+            <h3>🧩 LLM-Based SEO Content Generator</h3>
+            <p>
+                A semantic content generation system powered by Microsoft Azure's GPT API and internal LLM infrastructure. The project dynamically produces SEO-optimized titles, meta descriptions, and paragraph content by analyzing the contextual relationship between each page and relevant topics.
+            </p>
+            <p>
+                Advanced transformer models like LaBSE, MPNet, and multilingual-e5 were utilized to replace outdated multilingual BERT models. This allowed the system to semantically align generated content with the user's search intent across various languages and regions. Semantic similarity scores guided the model in identifying content gaps and crafting localized, high-quality outputs.
+            </p>
+            <p>
+                <strong>Key Impact:</strong> Automated the content creation pipeline for international landing pages, improving indexation and increasing organic traffic through multilingual, intent-driven content.
+            </p>
+            <div class="modal-tech">
+                <span class="tech-tag">LLM</span>
+                <span class="tech-tag">SEO Automation</span>
+                <span class="tech-tag">Semantic Search</span>
+                <span class="tech-tag">Azure GPT</span>
+                <span class="tech-tag">Multilingual NLP</span>
+                <span class="tech-tag">Transformer Models</span>
+            </div>
+        </div>
+    </div>
+    
     <div id="yearbook-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('yearbook')">&times;</span>
