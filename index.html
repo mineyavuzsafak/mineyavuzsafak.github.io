@@ -299,15 +299,31 @@
 
         .projects-wrapper {
             display: flex;
-            overflow: hidden;
+            overflow-x: auto;
             scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+            scrollbar-width: none; /* for Firefox */
+        }
+        
+        .projects-wrapper::-webkit-scrollbar {
+            display: none; /* for Chrome, Safari, and Opera */
+        }
+
+        .projects-wrapper {
+            cursor: grab;
+            user-select: none; /* prevent text selection */
+        }
+
+        .projects-wrapper.active {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
         }
 
         .projects-grid {
             display: flex;
             flex-wrap: nowrap;
             gap: 1.5rem;
-            padding-bottom: 1rem; /* Space for scrollbar if visible */
+            padding-bottom: 1rem; 
         }
         
         .project-card {
@@ -461,6 +477,7 @@
             display: flex;
             justify-content: space-between;
             z-index: 10;
+            pointer-events: none; /* Let clicks pass through to the slider */
         }
 
         .slider-nav button {
@@ -472,6 +489,7 @@
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
+            pointer-events: all; /* Make buttons clickable again */
         }
         
         .slider-nav button:hover {
@@ -1724,7 +1742,7 @@
             }
         });
         
-        // Project Slider
+        // Project Slider Buttons
         const projectsWrapper = document.querySelector('.projects-wrapper');
         const prevButton = document.getElementById('prev-slide');
         const nextButton = document.getElementById('next-slide');
@@ -1735,6 +1753,50 @@
 
         prevButton.addEventListener('click', () => {
             projectsWrapper.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+
+        // Touch and Drag to Slide functionality
+        const slider = document.querySelector('.projects-wrapper');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // the *2 makes the scroll faster
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch Events for Mobile
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
         });
 
         // Smooth scrolling for navigation links
